@@ -1,0 +1,34 @@
+proxies:
+- name: mastertrojan
+  type: trojan
+  server: vpn.master.xyz
+  port: 443
+  password: masterwifi
+  udp: true
+  sni: isibug.com
+  skip-cert-verify: true
+- name: mastervmess
+  type: vmess
+  server: vps.masterwifi.xyz
+  port: 443
+  uuid: xxxx-xxxx-xxxx-xxxx
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-path: /v2ray
+  ws-headers:
+      Host: isibug.com
+- name: mastershadowssocks
+  type: ss
+  server: ss-masterwifi.xyz
+  port: 1443
+  cipher: chacha20-ietf-poly1305
+  password: masterwifi
+  udp: true
+  skip-cert-verify: true
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: isibug.com
